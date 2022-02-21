@@ -12,9 +12,9 @@ public class Main {
 			ListVehicles listVehicles = new ListVehicles();
 			ArrayList list = listVehicles.createdListVehicles();
 			listVehicles.showVehicles(list);
-		}catch (ArrayIndexOutOfBoundsException exc){
+		}catch (Exception e){
             //Capturando la excepción
-            JOptionPane.showMessageDialog(null, "Elemento no encontrado \n");
+            JOptionPane.showMessageDialog(null, "Error...\n");
         }
 	}
 }

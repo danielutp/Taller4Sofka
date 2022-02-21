@@ -12,16 +12,16 @@ public class Main {
 	 * @version 1.0.0	 
 	 * @throws ParseException
 	 */
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException {			
         try {
         	PlanetList planetlist = new PlanetList();
     		String name1 = JOptionPane.showInputDialog("Introduzca el nombre del 1 planeta\n");
     		String name2 = JOptionPane.showInputDialog("Introduzca el nombre del 2 planeta\n");
-    		planetlist.calculateGravitationalLaw(name1, name2, planetlist.listOfPlanets);
-              
-        }catch (ArrayIndexOutOfBoundsException exc){
+    		planetlist.calculateGravitationalLaw(name1, name2, planetlist.listOfPlanets);              
+        }catch (Exception e){
             //Capturando la excepción
             JOptionPane.showMessageDialog(null, "Elemento no encontrado \n");
+            System.out.println("Error: "+e);
         }		
-	}
+	}	
 }

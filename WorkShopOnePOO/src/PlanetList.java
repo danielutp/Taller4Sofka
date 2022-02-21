@@ -64,9 +64,9 @@ public class PlanetList {
 	 * @param name1 nombre del primer planeta
 	 * @param name2 nombre del segundo planeta
 	 * @param planetList lista de planetas del sistema solar
-	 * @throws ParseException
+	 * @throws Exception 
 	 */
-	public void calculateGravitationalLaw(String name1, String name2,ArrayList<Planet> planetList) throws ParseException {
+	public void calculateGravitationalLaw(String name1, String name2,ArrayList<Planet> planetList) throws Exception {
 		Planet firstPlanet = new Planet();
 		Planet secondPlanet = new Planet();
 		for (Planet planet1 : planetList) {
@@ -83,6 +83,8 @@ public class PlanetList {
 			double distance =  Math.abs(firstPlanet.getDistanceToSun() - secondPlanet.distanceToSun);
 			double constantGravitational = 6.39E23*firstPlanet.getMass() * secondPlanet.getMass() / Math.pow(distance, 2);
 			JOptionPane.showMessageDialog(null, "La atraccion gravitatoria entre los planetas . \n"+constantGravitational);
+		}else {
+			throw new Exception("Error: Taller4Sofka/WorkShopOnePOO/src/planet,java#calculateGravitationalLaw");
 		}
 	}	
 }

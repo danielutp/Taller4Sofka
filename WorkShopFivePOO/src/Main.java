@@ -10,13 +10,13 @@ public class Main {
 	public static void main(String[] args) {
 		JOptionPane.showMessageDialog(null,"Bienvenido a la creacion de vehiculos");
 		int opcion = 0;
-		ArrayList<Vehicle> listVehicles = new ArrayList<Vehicle>();
-		do {			
-			opcion = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido al sistema creacion de vehiculos\n"+"\n"+
-    				"Ingrese la opcion 1 para crear carro\n"+"Ingrese la opcion 2 para crear una bicicleta\n"+
-    				"Ingrese la opcion 3 para crear un bote\n"+"Ingrese la opcion 4 para crear un moto\n"+
-    				"Ingrese la opcion 5 para crear un camion\n"+"Ingrese la opcion 6 para salir del sistema\n"));
-			try {			
+		ArrayList<Vehicle> listVehicles = new ArrayList<Vehicle>();		
+		try {
+			do {			
+				opcion = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido al sistema creacion de vehiculos\n"+"\n"+
+	    				"Ingrese la opcion 1 para crear carro\n"+"Ingrese la opcion 2 para crear una bicicleta\n"+
+	    				"Ingrese la opcion 3 para crear un bote\n"+"Ingrese la opcion 4 para crear un moto\n"+
+	    				"Ingrese la opcion 5 para crear un camion\n"+"Ingrese la opcion 6 para salir del sistema\n"));
 			switch(opcion){						
 	            case 1 :
 	            	int id = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el id del vehiculo\n"));
@@ -74,12 +74,12 @@ public class Main {
 	            default:
 	            	JOptionPane.showMessageDialog(null,"no coincide");
 	                break;
-			}
-			}catch (ArrayIndexOutOfBoundsException exc){
-	            //Capturando la excepción
-	            JOptionPane.showMessageDialog(null, "Elemento no encontrado \n");
-	        }						
+			}			
 			} while (opcion !=6);
+		}catch (Exception e){
+            //Capturando la excepción
+            JOptionPane.showMessageDialog(null, "Error.. \n");
+        }	
 		ListVehicles listVehicles1 = new ListVehicles();		
 		listVehicles1.showVehicles(listVehicles);
 	}

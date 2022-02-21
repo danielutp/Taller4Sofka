@@ -18,10 +18,10 @@ public class Main {
             int numAleatorio=(int)Math.floor(Math.random()*(num1-num2)+num2);
             arreglo[i]= numAleatorio;
             JOptionPane.showMessageDialog(null, "La lista creada por defecto es : \n"+ arreglo[i]);           
-        }        
+        }       
+        try {
         int opcion = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido ingrese 1 para ordenar algoritmo de la burbuja \n"+
-        		"Bienvenido ingrese 2 para ordenar quick sort \n"));
-        try {		
+            	"Bienvenido ingrese 2 para ordenar quick sort \n"));
 			if (opcion == 1 ) {	
 				Order order = new Order();
 				order.orderList(arreglo);
@@ -33,9 +33,9 @@ public class Main {
 				}
 			}
         }
-        catch (ArrayIndexOutOfBoundsException exc){
+        catch (Exception e){
             //Capturando la excepción
-            JOptionPane.showMessageDialog(null, "Elemento no encontrado \n");
+            JOptionPane.showMessageDialog(null, "Error.. \n");
         }
 	}
 }
